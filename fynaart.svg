@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#FF4FD8" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#A855F7" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#6D28D9" stop-opacity="1"/>
+    </radialGradient>
+
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="540" cy="540" r="500" fill="url(#bg)"/>
+  <circle cx="540" cy="540" r="500" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="10"/>
+
+  <!-- Sparkles -->
+  <g fill="#FFFFFF" opacity="0.9" filter="url(#glow)">
+    <path d="M170 350 l18 45 l45 18 l-45 18 l-18 45 l-18-45 l-45-18 l45-18 z"/>
+    <path d="M880 300 l14 35 l35 14 l-35 14 l-14 35 l-14-35 l-35-14 l35-14 z"/>
+    <path d="M900 650 l10 24 l24 10 l-24 10 l-10 24 l-10-24 l-24-10 l24-10 z"/>
+    <circle cx="260" cy="690" r="10" />
+  </g>
+
+  <!-- Nail polish bottle -->
+  <g transform="translate(0,20)" filter="url(#shadow)">
+    <!-- Cap -->
+    <rect x="410" y="330" width="260" height="70" rx="28" fill="#2A0B3A"/>
+    <rect x="430" y="345" width="220" height="40" rx="18" fill="#3B1455" opacity="0.9"/>
+
+    <!-- Bottle body -->
+    <path d="M440 390
+             C440 350, 640 350, 640 390
+             L640 860
+             C640 900, 440 900, 440 860 Z"
+          fill="#2B0B45"/>
+
+    <!-- Main polish color -->
+    <path d="M470 420
+             C470 390, 610 390, 610 420
+             L610 840
+             C610 870, 470 870, 470 840 Z"
+          fill="#FF4FD8" opacity="0.92"/>
+
+    <!-- Inner highlight -->
+    <path d="M500 440
+             C500 410, 585 410, 585 440
+             L585 820
+             C585 850, 500 850, 500 820 Z"
+          fill="url(#glass)"/>
+
+    <!-- Label stripe -->
+    <rect x="470" y="630" width="140" height="120" rx="24" fill="#FFFFFF" opacity="0.18"/>
+    <rect x="500" y="655" width="80" height="70" rx="16" fill="#FFFFFF" opacity="0.10"/>
+    <rect x="515" y="670" width="50" height="40" rx="12" fill="#FFFFFF" opacity="0.12"/>
+
+    <!-- Small bottom shine -->
+    <path d="M470 860 C470 900 610 900 610 860"
+          fill="#FFFFFF" opacity="0.12"/>
+  </g>
+
+  <!-- Text: Fyna -->
+  <text x="540" y="520"
+        text-anchor="middle"
+        font-family="Pacifico, 'Dancing Script', 'Lobster', cursive"
+        font-size="118"
+        fill="#FFFFFF"
+        opacity="0.95"
+        style="letter-spacing: 2px;">
+    Fyna
+  </text>
+
+  <!-- Text: Art -->
+  <text x="540" y="640"
+        text-anchor="middle"
+        font-family="Poppins, Nunito, Quicksand, Arial, sans-serif"
+        font-size="64"
+        font-weight="700"
+        fill="#FFD1F2"
+        opacity="0.98">
+    ART
+  </text>
+</svg>
