@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<!--
-  HALAMAN 2 - GALERI & LAYANAN
-  Dikerjakan oleh: [ISI NAMA TEMAN KAMU DI SINI]
-  Bagian tugas besar Fyna Art Nail Art
-  Branch git yang disarankan: galeri / nama-teman
--->
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -100,8 +94,18 @@
   }
   .g-card:hover{transform:translateY(-6px); box-shadow:0 18px 34px rgba(155,93,229,0.22);}
   .g-thumb{
-    height:190px; position:relative; display:flex; align-items:center; justify-content:center;
-    font-family:'Fredoka'; font-size:2.4rem; color:#fff;
+    .g-thumb{
+  height:190px;
+  position:relative;
+  overflow:hidden;
+  background:var(--lavender);
+}
+.g-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
   }
   .g-thumb::after{
     content:""; position:absolute; inset:0; opacity:0.15;
@@ -182,7 +186,7 @@
 
 <section class="gallery-grid wrap">
   <div class="g-card">
-    <div class="g-thumb" style="background:linear-gradient(135deg,#FF3E96,#9B5DE5);">🌸</div>
+    <div class="g-thumb"><img src="Ombre Sunset.png" alt="Ombre Sunset"></div>
     <div class="g-body">
       <h3>Ombre Sunset</h3>
       <p>Gradasi pink ke ungu, cocok buat tampilan sehari hari yang tetap eye catching dan mempunyai vibe cute.</p>
@@ -190,7 +194,7 @@
     </div>
   </div>
   <div class="g-card">
-    <div class="g-thumb" style="background:linear-gradient(135deg,#9B5DE5,#3B1E44);">🌀</div>
+    <div class="g-thumb"><img src="Marble Dream.png" alt="Marble Dream"></div>
     <div class="g-body">
       <h3>Marble Dream</h3>
       <p>Motif marmer halus dengan sentuhan gold foil di ujung kuku dapat menambahkan vibes modern.</p>
@@ -198,7 +202,7 @@
     </div>
   </div>
   <div class="g-card">
-    <div class="g-thumb" style="background:linear-gradient(135deg,#FFD166,#FF3E96);">✨</div>
+    <div class="g-thumb"><img src="Korean Chrome.png" alt="Korean Chrome"></div>
     <div class="g-body">
       <h3>Korean Chrome</h3>
       <p>Efek chrome metalik kekinian ala nail art Korea menjadi tren kekinian, glossy tahan lama.</p>
@@ -206,7 +210,7 @@
     </div>
   </div>
   <div class="g-card">
-    <div class="g-thumb" style="background:linear-gradient(135deg,#FF9ACB,#9B5DE5);">🌷</div>
+    <div class="g-thumb"><img src="Hand Paint Floral.png" alt="Hand Paint Floral"></div>
     <div class="g-body">
       <h3>Hand Paint Floral</h3>
       <p>Lukisan bunga manual di tiap kuku yang cantik, detail rapi dan enggak pasaran.</p>
@@ -214,7 +218,7 @@
     </div>
   </div>
   <div class="g-card">
-    <div class="g-thumb" style="background:linear-gradient(135deg,#F3E4FF,#9B5DE5);">🤍</div>
+    <div class="g-thumb"><img src="Minimalist Line.png" alt="Minimalist Line"></div>
     <div class="g-body">
       <h3>Minimalist Line</h3>
       <p>Garis simpel dan warna netral, pas buat kamu yang suka gaya clean dan modern.</p>
@@ -222,7 +226,7 @@
     </div>
   </div>
   <div class="g-card">
-    <div class="g-thumb" style="background:linear-gradient(135deg,#E4147A,#FFD166);">💎</div>
+    <div class="g-thumb"><img src="Glitter Glam.png" alt="Glitter Glam"></div>
     <div class="g-body">
       <h3>Glitter Glam</h3>
       <p>Full glitter dengan aksen crystal kecil, cocok buat acara spesial dan acara yang formal.</p>
