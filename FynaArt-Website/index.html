@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fyna Art Nail Art | Beranda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF6FB;
+    --pink:#FF3E96;
+    --pink-dark:#E4147A;
+    --purple:#9B5DE5;
+    --purple-dark:#6B2FA5;
+    --plum:#3B1E44;
+    --lavender:#F3E4FF;
+    --gold:#FFD166;
+    --radius-lg:32px;
+    --radius-sm:16px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    background:var(--cream);
+    color:var(--plum);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.brand{font-family:'Fredoka', sans-serif;}
+  a{text-decoration:none; color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  /* NAVBAR */
+  .site-header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,246,251,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(155,93,229,0.15);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; max-width:1120px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.25rem; color:var(--pink-dark);}
+  .brand img{width:42px; height:42px; object-fit:contain;}
+  .nav-links{display:flex; gap:28px; font-weight:600; font-size:0.95rem;}
+  .nav-links a{position:relative; padding:6px 0; color:var(--plum);}
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:0; height:3px; width:0;
+    background:var(--pink); border-radius:2px; transition:width .25s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after{width:100%;}
+  .nav-links a.active{color:var(--pink-dark);}
+  .nav-cta{
+    background:var(--pink); color:#fff; font-weight:700; font-size:0.9rem;
+    padding:10px 20px; border-radius:999px; box-shadow:0 6px 14px rgba(255,62,150,0.35);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px); box-shadow:0 10px 20px rgba(255,62,150,0.45);}
+  .burger{display:none; font-size:1.6rem; background:none; border:none; color:var(--pink-dark); cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:80px 24px 100px;
+    overflow:hidden;
+  }
+  .hero-blob{
+    position:absolute; border-radius:50%;
+    filter:blur(2px); opacity:0.55; z-index:0;
+  }
+  .blob-1{width:320px; height:320px; background:var(--lavender); top:-80px; right:-60px;}
+  .blob-2{width:180px; height:180px; background:var(--gold); opacity:0.35; bottom:20px; left:-40px;}
+  .hero-inner{
+    position:relative; z-index:1;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;
+    max-width:1120px; margin:0 auto;
+  }
+  .eyebrow-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--lavender); color:var(--purple-dark);
+    padding:8px 16px; border-radius:999px; font-weight:600; font-size:0.85rem;
+    margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    font-weight:700; line-height:1.1; color:var(--pink-dark);
+    margin-bottom:20px;
+  }
+  .hero h1 span{color:var(--purple);}
+  .hero p{font-size:1.05rem; max-width:480px; color:#5c4363; margin-bottom:28px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-primary{
+    background:linear-gradient(135deg, var(--pink), var(--purple));
+    color:#fff; font-weight:700; padding:14px 28px; border-radius:999px;
+    box-shadow:0 10px 22px rgba(155,93,229,0.35);
+    transition:transform .2s ease;
+  }
+  .btn-primary:hover{transform:translateY(-3px);}
+  .btn-ghost{
+    border:2px solid var(--purple); color:var(--purple-dark); font-weight:700;
+    padding:12px 26px; border-radius:999px; transition:background .2s ease, color .2s ease;
+  }
+  .btn-ghost:hover{background:var(--purple); color:#fff;}
+
+  .hero-visual{
+    position:relative; display:flex; align-items:center; justify-content:center;
+  }
+  .hero-card{
+    background:#fff; border-radius:var(--radius-lg);
+    padding:28px; box-shadow:0 24px 48px rgba(107,47,165,0.18);
+    transform:rotate(-3deg);
+    width:100%; max-width:340px;
+  }
+  .hero-card img{border-radius:var(--radius-sm); width:100%; margin-bottom:16px;}
+  .swatch-row{display:flex; gap:10px;}
+  .swatch{width:32px; height:32px; border-radius:50%; border:3px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,0.15);}
+
+  /* ABOUT */
+  .about{padding:90px 0;}
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center;}
+  .about h2{font-size:2.2rem; color:var(--pink-dark); margin-bottom:18px;}
+  .about p{color:#5c4363; margin-bottom:16px; max-width:480px;}
+  .feature-list{display:grid; gap:16px; margin-top:24px;}
+  .feature{
+    display:flex; gap:14px; align-items:flex-start;
+    background:#fff; border-radius:20px; padding:18px 20px;
+    box-shadow:0 8px 20px rgba(155,93,229,0.1);
+  }
+  .feature .icon{
+    flex-shrink:0; width:44px; height:44px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--lavender); font-size:1.3rem;
+  }
+  .feature h3{font-size:1rem; margin-bottom:4px; color:var(--purple-dark);}
+  .feature p{font-size:0.9rem; margin:0; max-width:none;}
+
+  .about-visual{
+    background:linear-gradient(160deg, var(--pink) 0%, var(--purple) 100%);
+    border-radius:var(--radius-lg); padding:36px; color:#fff;
+    display:flex; flex-direction:column; gap:20px;
+  }
+  .stat-row{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .stat-num{font-family:'Fredoka'; font-size:2.4rem; font-weight:600;}
+  .stat-label{font-size:0.85rem; opacity:0.9;}
+
+  /* CTA STRIP */
+  .cta-strip{
+    background:var(--lavender); border-radius:var(--radius-lg);
+    padding:48px 40px; margin:40px auto 90px; max-width:1120px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+  }
+  .cta-strip h2{color:var(--purple-dark); font-size:1.7rem; max-width:420px;}
+
+  /* FOOTER */
+  .site-footer{background:var(--plum); color:#f3e4ff; padding:56px 0 24px;}
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; margin-bottom:36px;}
+  .footer-brand{display:flex; align-items:center; gap:10px; font-size:1.15rem; font-weight:700; margin-bottom:12px; color:#fff;}
+  .footer-brand img{width:36px; height:36px;}
+  .footer-col h4{font-family:'Fredoka'; font-size:1rem; margin-bottom:14px; color:var(--gold);}
+  .footer-col a, .footer-col p{display:block; color:#e6d3f0; font-size:0.9rem; margin-bottom:10px;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.15); padding-top:20px; text-align:center; font-size:0.8rem; color:#c9a9dc;}
+
+  @media (max-width:860px){
+    .hero-inner, .about-grid{grid-template-columns:1fr;}
+    .hero-inner{text-align:center;}
+    .hero p{margin-left:auto; margin-right:auto;}
+    .hero-actions{justify-content:center;}
+    .footer-grid{grid-template-columns:1fr; text-align:center;}
+    .footer-brand{justify-content:center;}
+  }
+  @media (max-width:700px){
+    .nav-links{
+      position:fixed; top:70px; left:0; right:0; background:var(--cream);
+      flex-direction:column; padding:20px 24px; gap:16px;
+      transform:translateY(-140%); transition:transform .25s ease; box-shadow:0 12px 20px rgba(0,0,0,0.08);
+    }
+    .nav-links.open{transform:translateY(0);}
+    .burger{display:block;}
+    .cta-strip{flex-direction:column; text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand"><img src="logo.png" alt="Logo Fyna Art"> Fyna Art</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Beranda</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="kontak.html" class="nav-cta">Booking</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Buka menu">&#9776;</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow-pill">✨ Studio Nail Art Bogor</span>
+      <h1>Kuku cantik, mood <span>langsung naik</span></h1>
+      <p>Fyna Art bikin desain kuku custom sesuai vibe kamu, dari yang minimalis sampai yang super eye catching. Bahan aman, higienis, dan hasil rapi tiap sesi.</p>
+      <div class="hero-actions">
+        <a href="kontak.html" class="btn-primary">Booking Sekarang</a>
+        <a href="galeri.html" class="btn-ghost">Lihat Galeri</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="logo.png" alt="Ilustrasi Fyna Art Nail Art">
+        <div class="swatch-row">
+          <span class="swatch" style="background:#FF3E96"></span>
+          <span class="swatch" style="background:#9B5DE5"></span>
+          <span class="swatch" style="background:#FFD166"></span>
+          <span class="swatch" style="background:#FF9ACB"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about wrap">
+  <div class="about-grid">
+    <div>
+      <h2>Kenapa pilih Fyna Art?</h2>
+      <p>Kami percaya kuku itu detail kecil yang bikin penampilan makin lengkap. Setiap desain dikerjakan dengan teliti, disesuaikan sama bentuk kuku dan gaya kamu sehari hari.</p>
+      <div class="feature-list">
+        <div class="feature">
+          <div class="icon">💅</div>
+          <div>
+            <h3>Desain Custom</h3>
+            <p>Request desain sesuai referensi atau mood kamu, bebas eksplor warna dan motif.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🧼</div>
+          <div>
+            <h3>Alat Higienis</h3>
+            <p>Alat disterilkan tiap sesi, bahan yang dipakai aman untuk kuku dan kulit sekitar.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">📍</div>
+          <div>
+            <h3>Lokasi Bogor</h3>
+            <p>Studio mudah dijangkau, cocok buat kamu yang tinggal di area Bogor dan sekitarnya.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <h3 style="font-family:'Fredoka'; font-size:1.4rem;">Sekilas Fyna Art</h3>
+      <p style="opacity:0.95; font-size:0.95rem;">Studio kecil dengan hasil besar. Fokus kami satu, bikin kamu percaya diri dari ujung jari.</p>
+      <div class="stat-row">
+        <div>
+          <div class="stat-num">50+</div>
+          <div class="stat-label">Desain tersedia</div>
+        </div>
+        <div>
+          <div class="stat-num">4.9</div>
+          <div class="stat-label">Rating pelanggan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip wrap">
+  <h2>Penasaran sama koleksi desain kami?</h2>
+  <a href="galeri.html" class="btn-primary">Jelajahi Galeri</a>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="logo.png" alt="Logo Fyna Art"> Fyna Art</div>
+        <p>Studio nail art di Bogor. Custom desain, alat higienis, hasil rapi.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <a href="index.html">Beranda</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="kontak.html">Kontak</a>
+      </div>
+      <div class="footer-col">
+        <h4>Terhubung</h4>
+        <a href="https://www.instagram.com/fynaart.official?stkn=MTl3bW4wem1lY2FpeQ==" target="_blank" rel="noopener">Instagram @fynaart.official</a>
+        <p>Bogor, Jawa Barat</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Fyna Art Nail Art. Dibuat sebagai tugas besar mata kuliah.</div>
+  </div>
+</footer>
+
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burgerBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
+</body>
+</html>
